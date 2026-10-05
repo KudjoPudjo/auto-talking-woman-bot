@@ -1,0 +1,30 @@
+{
+  "name": "blizhe-telegram-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram assistant with transparent AI replies, personal style and date briefs",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "demo": "node src/server.js --demo",
+    "test": "node --test test/core.test.js test/http.test.js",
+    "check": "node --check src/server.js && node --check src/engine.js && node --check public/app.js",
+    "test:e2e": "playwright test",
+    "setup": "node scripts/setup.js",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "teleproto": "^1.229.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "prettier": "^3.9.9"
+  }
+}
